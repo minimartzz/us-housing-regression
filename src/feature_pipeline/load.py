@@ -43,5 +43,7 @@ def load_and_split_data(
   print(f"Feature Pipeline #1: Load and split data completed, saved to {outdir}")
   print(f"Train: {train_df.shape} | Validation: {valid_df.shape} | Test: {test_df.shape}")
 
+  return train_df, valid_df, test_df
+
 if __name__ == "__main__":
   load_and_split_data()
