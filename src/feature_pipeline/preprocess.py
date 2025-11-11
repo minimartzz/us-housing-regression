@@ -182,7 +182,8 @@ def run_preprocess(
       processed_dir=processed_dir,
       metros_path=metros_path
     )
-
+  
+  print(f"Feature Pipeline #2: Data preprocessing complete. Train, Valid, Test files added to {PROCESSED_DIR}")
 
 if __name__ == "__main__":
   run_preprocess()

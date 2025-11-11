@@ -10,13 +10,13 @@ from pathlib import Path
 DATA_DIR = Path("data/raw")
 
 def load_and_split_data(
-  raw_path: str = "data/raw/untouched_raw_original.csv",
+  raw_path: str = "data/raw/HouseTS.csv",
   output_dir: Path | str = DATA_DIR
 ):
   """Load raw dataset, split into train/valid/test by date and save to output_dir
 
   Args:
-      raw_path (str, optional): _description_. Defaults to "data/raw/untouched_raw_original.csv".
+      raw_path (str, optional): _description_. Defaults to "data/raw/HouseTS.csv".
       output_dir (Path | str, optional): _description_. Defaults to DATA_DIR.
   """
   df = pd.read_csv(raw_path)
