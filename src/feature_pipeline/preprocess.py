@@ -78,7 +78,7 @@ def clean_and_merge(
     print("⚠️ Skipping lat/lng merge: metros file missing required columns.")
     return df
 
-  metros["metro_full"] = metros["metro_full"].apply(normalize_city)
+  metros["metro_full"] = metros["metro_full"].apply(normalise_city)
   df = df.merge(metros[["metro_full", "lat", "lng"]],
                 how="left", left_on="city_full", right_on="metro_full")
   df.drop(columns=["metro_full"], inplace=True, errors="ignore")
