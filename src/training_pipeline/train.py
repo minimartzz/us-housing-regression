@@ -17,7 +17,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from xgboost import XGBRegressor
 
 DEFAULT_TRAIN = Path("data/clean/feature_engineered_train.csv")
-DEFAULT_EVAL = Path("data/clean/feature_engineered_eval.csv")
+DEFAULT_EVAL = Path("data/clean/feature_engineered_valid.csv")
 DEFAULT_OUT = Path("models/xgb_model.pkl")
 
 def _maybe_sample(

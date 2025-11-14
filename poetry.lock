@@ -142,6 +142,19 @@ files = [
 ]
 
 [[package]]
+name = "nvidia-nccl-cu12"
+version = "2.28.7"
+description = "NVIDIA Collective Communication Library (NCCL) Runtime"
+optional = false
+python-versions = ">=3"
+groups = ["main"]
+markers = "platform_system == \"Linux\" and platform_machine != \"aarch64\""
+files = [
+    {file = "nvidia_nccl_cu12-2.28.7-py3-none-manylinux_2_18_aarch64.whl", hash = "sha256:391a53ca3036972fc059c2977bdf34f982c8f5259d5264d10756b11f5cb41e0c"},
+    {file = "nvidia_nccl_cu12-2.28.7-py3-none-manylinux_2_18_x86_64.whl", hash = "sha256:29ea236d02fd57ea5f14537e95985d190c6ca067a1eba2e2b319deebdd6ccdc3"},
+]
+
+[[package]]
 name = "packaging"
 version = "25.0"
 description = "Core utilities for Python packages"
@@ -579,7 +592,35 @@ files = [
     {file = "tzdata-2025.2.tar.gz", hash = "sha256:b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"},
 ]
 
+[[package]]
+name = "xgboost"
+version = "3.1.1"
+description = "XGBoost Python Package"
+optional = false
+python-versions = ">=3.10"
+groups = ["main"]
+files = [
+    {file = "xgboost-3.1.1-py3-none-macosx_10_15_x86_64.whl", hash = "sha256:a51a2e488102a007b8c222d58bf855415002e8cdf06d104eea24b08dbf4eec4f"},
+    {file = "xgboost-3.1.1-py3-none-macosx_12_0_arm64.whl", hash = "sha256:fac06c989f2cf11af7aa546b3bb78e7fa87595891e5dfde28edf3e7492e5440a"},
+    {file = "xgboost-3.1.1-py3-none-manylinux_2_28_aarch64.whl", hash = "sha256:4347671aa8a495595f17135171aeae5f6d9ab4b4e7b02f191864cf2202e3c902"},
+    {file = "xgboost-3.1.1-py3-none-manylinux_2_28_x86_64.whl", hash = "sha256:405e48a201495fe9474f7aa27419f937794726a1bc7d2c2f3208b351c816580a"},
+    {file = "xgboost-3.1.1-py3-none-win_amd64.whl", hash = "sha256:2e1067489688ad99a410e8f2acdfe9d21a299c2f3b4b25dc8f094eae709c7447"},
+    {file = "xgboost-3.1.1.tar.gz", hash = "sha256:47fbf190a3804d5a8c25188781f8f5412a5724ea3a0604d29d4af4b3120ffa6b"},
+]
+
+[package.dependencies]
+numpy = "*"
+nvidia-nccl-cu12 = {version = "*", markers = "platform_system == \"Linux\" and platform_machine != \"aarch64\""}
+scipy = "*"
+
+[package.extras]
+dask = ["dask", "distributed", "pandas"]
+pandas = ["pandas (>=1.2)"]
+plotting = ["graphviz", "matplotlib"]
+pyspark = ["cloudpickle", "pyspark (>=3.4)", "scikit-learn"]
+scikit-learn = ["scikit-learn"]
+
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11"
-content-hash = "a8bc9aa34dfad269fd2b61749b611a9222b9cba66ecbec0b7d125f1b7edaf6e9"
+content-hash = "5eba71b0dd3a2c1afaebb2961b4e7e4e99a6e09ee5488ac3bcc150a781ea59a4"
