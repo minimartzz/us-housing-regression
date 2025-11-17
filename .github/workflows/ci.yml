@@ -51,14 +51,14 @@ jobs:
       - name: Deploy housing-api-service
         run: |
           aws ecs update-service \
-            --cluster housing-api-cluster-ecs
-            --service housing-api-service
+            --cluster housing-api-cluster-ecs \
+            --service housing-api-service \
             --force-new-deployment
 
       # Deploy to ECS - Streamlit
       - name: Deploy housing-streamlit-service
         run: |
           aws ecs update-service \
-            --cluster housing-api-cluster-ecs
-            --service housing-streamlit-service
+            --cluster housing-api-cluster-ecs \
+            --service housing-streamlit-service \
             --force-new-deployment

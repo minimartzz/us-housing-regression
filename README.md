@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="assets/header.png" alt="logo" width="300" height="auto" />
+  <img src="assets/header.jpeg" alt="logo" width="300" height="auto" />
   <h1>US Housing Prediction</h1>
   
   <p>
@@ -33,10 +33,6 @@
 
 ![streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
 ![plotly](https://img.shields.io/badge/Plotly-239120?style=for-the-badge&logo=plotly&logoColor=white)
-
-## Coverage
-
-Reference: https://github.com/dwyl/repo-badges
 
 ---
 
