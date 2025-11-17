@@ -1,6 +1,6 @@
 # Dockerfile.streamlit
 # Separated Dockefiles for UI and FastAPI to prevent mixing UI and backend logic
-FROM --platform=$BUILDPLATFORM python3.11-slim
+FROM --platform=$BUILDPLATFORM python:3.11-slim
 
 ENV PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1
 WORKDIR /app

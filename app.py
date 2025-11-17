@@ -9,7 +9,7 @@ from pathlib import Path
 
 # ---------- Config ----------
 API_URL = os.environ.get("API_URL", "http://127.0.0.1:8000/predict")
-S3_BUCKET = os.get_env("S3_BUCKET", "us-housing-regression")
+S3_BUCKET = os.getenv("S3_BUCKET", "us-housing-regression")
 REGION = os.getenv("AWS_REGION", "ap-southeast-1")
 
 s3 = boto3.client('s3', region_name=REGION)
@@ -95,7 +95,7 @@ if st.button("Show Predictions 🚀"):
 
     try:
       # Request for the prediction results
-      resp = request.post(API_URL, json=payload, timeout=60)
+      resp = requests.post(API_URL, json=payload, timeout=60)
       resp.raise_for_status()
       out = resp.json()
       preds = out.get('predictions', [])

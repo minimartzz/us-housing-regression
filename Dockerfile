@@ -8,8 +8,9 @@ WORKDIR /app
 COPY pyproject.toml poetry.lock* ./
 
 # Install poetry (dependency manager)
-RUN curl -sSL https://install.python-poetry.org | python3 -
-RUN poetry install --sync --only main
+RUN pip install --no-cache-dir poetry
+RUN poetry self sync
+RUN poetry install --only main
 
 # Copy project files
 COPY . .
