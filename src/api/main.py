@@ -8,7 +8,7 @@ import pandas as pd
 import boto3
 import os
 
-from src.inference_pipine.inference import predict
+from src.inference_pipeline.inference import predict
 from src.batch.run_monthly import run_monthly_predictions
 
 # ---------- Define Variables ----------
@@ -55,7 +55,7 @@ def root():
 # Health check API - Checks if the model was downloaded. If yes, return feature details
 @app.get("/health")
 def health():
-  status = Dict[str, Any] = {"model_path": str(MODEL_PATH)}
+  status: Dict[str, Any] = {"model_path": str(MODEL_PATH)}
   if not MODEL_PATH.exists():
     status['status'] = 'unhealthy'
     status['error'] = 'Model not found'
